@@ -13,12 +13,47 @@ body {
     cursor: url('./imgs/olavinho.png?raw=true'), pointer;
 }
 
+/* **************
+         MAP
+**************  */
+
 .board {
     background: url('./imgs/lava.png?raw=true');
     height: 800px;
     position: relative;
     width: 1000px;
 }
+
+.lava {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.lava:hover ~ .game-over {
+z-index: 3;
+}
+
+.game-over:hover {
+    z-index: 3;
+}
+
+.game-over {
+    background-color: #f00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -3;
+    cursor: initial;
+}
+
 .room {
     position: absolute;
     background: url('./imgs/stone.png?raw=true');
@@ -67,4 +102,113 @@ body {
     height: 120px;
     right: calc(50% - 310px);
     width: 40px;
+}
+
+.bridge#b6 {
+    width: 40px;
+    height: 120px;
+    top: 0;
+    left: calc(50% - 20px);
+}
+
+.bridge#b7 {
+    width: 620px;
+    height: 40px;
+    top: 120px;
+    left: calc(50% - 310px);
+}
+
+.bridge#b8 {
+    width: 620px;
+    height: 40px;
+    top: 280px;
+    left: calc(50% - 310px);
+}
+
+.bridge#b9 {
+    top: 160px;
+    height: 120px;
+    left: calc(50% - 310px);
+    width: 40px;
+}
+
+.bridge#b10 {
+    top: 160px;
+    height: 120px;
+    right: calc(50% - 310px);
+    width: 40px;
+}
+
+
+/* **************
+        ENEMIES
+**************  */
+
+.goticulo {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    display: block;
+    background: url('./imgs/goticulos.png') no-repeat;
+    z-index: 1;
+}
+
+.goticulo#g1 {
+    bottom: calc(50% - 170px);
+    left: calc(50% - 170px);
+    animation: g1 3s linear infinite;
+}
+
+.goticulo#g2 {
+    bottom: calc(50% - -138px);
+    left: calc(50% - -138px);
+    animation: g2 3s linear infinite;
+}
+
+@keyframes g1 {
+    0% {
+        bottom: calc(50% - 170px);
+        left: calc(50% - 170px);
+    }
+
+    25% {
+        bottom: calc(50% - 170px);
+        left: calc(50% - -138px);
+    }
+
+    50% {
+        bottom: calc(50% - -138px);
+        left: calc(50% - -138px);
+    }
+
+    75% {
+        bottom: calc(50% - -138px);
+        left: calc(50% - 170px);
+    }
+}
+
+@keyframes g2 {
+    0% {
+        bottom: calc(50% - -138px);
+        left: calc(50% - -138px);
+    }
+
+    25% {
+        bottom: calc(50% - -138px);
+        left: calc(50% - 170px);
+    }
+
+    50% {
+        bottom: calc(50% - 170px);
+        left: calc(50% - 170px);
+    }
+
+    75% {
+        bottom: calc(50% - 170px);
+        left: calc(50% - -138px);
+    }
+}
+
+.goticulo:hover ~ .game-over {
+    z-index: 3;
 }
