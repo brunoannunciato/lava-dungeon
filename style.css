@@ -35,6 +35,20 @@ body {
     cursor: initial;
 }
 
+.win-view {
+    background-color: #0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -3;
+    cursor: initial;
+}
+
 .lava:hover ~ .game-over {
     z-index: 3;
 }
@@ -47,10 +61,19 @@ body {
   counter-reset: score;
 }
 
-input[type="checkbox"]:checked {
+.jowel:checked {
   counter-increment: score;
 }
 
+#j1:checked ~ #j2:checked ~ #j3:checked ~ #j4:checked ~ #portal-label {
+    opacity: 1;
+    transform: scale(1);
+    animation: portal-animation 10s linear infinite;
+}
+
+#portal:checked ~ .win-view {
+    z-index: 3;
+}
 /* **************
       INTERFACE
 **************  */
@@ -80,8 +103,8 @@ input[type="checkbox"]:checked {
 **************  */
 
 input[type=checkbox] {
-    visibility: hidden;
     pointer-events: none;
+    opacity: 0;
 }
 
 
@@ -89,6 +112,17 @@ label {
     position: absolute;
     z-index: 2;
     cursor: url('./imgs/olavinho.png?raw=true'), pointer;
+}
+
+label img {
+    filter: drop-shadow(0 0 3px #f00);
+    animation: jewel-glow 1s ease infinite;
+}
+
+@keyframes jewel-glow{
+ 0% { filter: drop-shadow(0 0 0px #f00); }
+ 50% { filter: drop-shadow(0 0 5px #f00); }
+ 100% { filter: drop-shadow(0 0 0px #f00); }
 }
 
 #l1 {
@@ -241,6 +275,20 @@ label {
     height: 120px;
     right: calc(50% - 310px);
     width: 40px;
+}
+
+#portal-label {
+    left: calc(50% - 16px);
+    top: 10px;
+    animation: portal-animation 10s linear infinite;
+    opacity: 0;
+    transition: all .4s ease-in;
+    transform: scale(3);
+}
+
+@keyframes portal-animation {
+    0% { transform: rotate(0) }
+    100% { transform: rotate(360deg) }
 }
 
 /* **************
