@@ -14,27 +14,8 @@ body {
 }
 
 /* **************
-         MAP
+    GAME ENGINE
 **************  */
-
-.board {
-    background: url('./imgs/lava.png?raw=true');
-    height: 800px;
-    position: relative;
-    width: 1000px;
-}
-
-.lava {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.lava:hover ~ .game-over {
-z-index: 3;
-}
 
 .game-over:hover {
     z-index: 3;
@@ -52,6 +33,109 @@ z-index: 3;
     top: 0;
     z-index: -3;
     cursor: initial;
+}
+
+.lava:hover ~ .game-over {
+    z-index: 3;
+}
+
+.goticulo:hover ~ .game-over {
+    z-index: 3;
+}
+
+/* **************
+      INTERFACE
+**************  */
+
+.score-board {
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 100px 10px 10px;
+}
+
+/* **************
+        REWARDS
+**************  */
+
+input[type=checkbox] {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+label {
+    position: absolute;
+    z-index: 2;
+    cursor: url('./imgs/olavinho.png?raw=true'), pointer;
+}
+
+#l1 {
+    top: 125px;
+    left: 195px;
+    transition: all .6s ease-in;
+}
+
+#l2 {
+    top: 125px;
+    left: 773px;
+    transition: all .4s ease-in;
+}
+
+#l3 {
+    top: 645px;
+    left: 195px;
+    transition: all 1s ease-in;
+}
+
+#l4 {
+    top: 645px;
+    left: 773px;
+    transition: all .8s ease-in;
+}
+
+.jowel#j1:checked ~ #l1{
+    top: 10px;
+    left: 850px;
+    opacity: 0;
+}
+
+.jowel#j2:checked ~ #l2{
+    top: 10px;
+    left: 850px;
+    opacity: 0;
+}
+
+.jowel#j3:checked ~ #l3{
+    top: 10px;
+    left: 850px;
+    opacity: 0;
+}
+
+.jowel#j4:checked ~ #l4{
+    top: 10px;
+    left: 850px;
+    opacity: 0;
+}
+
+/* **************
+         MAP
+**************  */
+
+.board {
+    background: url('./imgs/lava.png?raw=true');
+    height: 800px;
+    position: relative;
+    width: 1000px;
+}
+
+.lava {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .room {
@@ -139,7 +223,6 @@ z-index: 3;
     width: 40px;
 }
 
-
 /* **************
         ENEMIES
 **************  */
@@ -207,8 +290,4 @@ z-index: 3;
         bottom: calc(50% - 170px);
         left: calc(50% - -138px);
     }
-}
-
-.goticulo:hover ~ .game-over {
-    z-index: 3;
 }
