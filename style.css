@@ -43,16 +43,36 @@ body {
     z-index: 3;
 }
 
+::root {
+  counter-reset: score;
+}
+
+input[type="checkbox"]:checked {
+  counter-increment: score;
+}
+
 /* **************
       INTERFACE
 **************  */
 
 .score-board {
+    align-items: center;
     background-color: rgba(0, 0, 0, .7);
     position: absolute;
+    justify-content: space-around;
+    display: flex;
     right: 0;
     top: 0;
-    padding: 10px 100px 10px 10px;
+    padding: 10px;
+    width: 100px;
+}
+
+.score-board::after {
+    color: #fff;
+    font-size: 1.25em;
+    font-weight: bold;
+    content: counter(score) " / 4";
+    display: block;
 }
 
 /* **************
