@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: url('./imgs/olavinho.png?raw=true'), pointer;
+    cursor: url('./imgs/olavinho.png'), pointer;
 }
 
 /* **************
@@ -111,7 +111,7 @@ input[type=checkbox] {
 label {
     position: absolute;
     z-index: 2;
-    cursor: url('./imgs/olavinho.png?raw=true'), pointer;
+    cursor: url('./imgs/olavinho.png'), pointer;
 }
 
 label img {
@@ -178,7 +178,7 @@ label img {
 **************  */
 
 .board {
-    background: url('./imgs/lava.png?raw=true');
+    background: url('./imgs/lava.png');
     height: 800px;
     position: relative;
     width: 1000px;
@@ -194,7 +194,7 @@ label img {
 
 .room {
     position: absolute;
-    background: url('./imgs/stone.png?raw=true');
+    background: url('./imgs/stone.png');
     bottom: calc(50% - 170px);
     height: 340px;
     left: calc(50% - 170px);
@@ -203,7 +203,7 @@ label img {
 
 .bridge {
     position: absolute;
-    background: url('./imgs/stone.png?raw=true');
+    background: url('./imgs/stone.png');
 }
 
 .bridge#b1 {
