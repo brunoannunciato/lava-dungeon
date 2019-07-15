@@ -7,10 +7,35 @@ body {
 }
 
 body {
+    background-color: #000;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
     cursor: url('./imgs/olavinho.png'), pointer;
+}
+
+body::before {
+    content: '';
+    background-image: url('./imgs/stone.png');
+    background-repeat: repeat;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: .5;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.header img{
+    max-width: 220px;
 }
 
 /* **************
@@ -22,7 +47,7 @@ body {
 }
 
 .game-over {
-    background-color: #f00;
+    background-color: #330000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +61,7 @@ body {
 }
 
 .win-view {
-    background-color: #0f0;
+    background-color: #030;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,7 +79,7 @@ body {
 }
 
 .goticulo:hover ~ .game-over {
-    /* z-index: 3; */
+    z-index: 3;
 }
 
 ::root {
@@ -112,7 +137,7 @@ label {
     position: absolute;
     z-index: 2;
     padding: 20px;
-    /* cursor: url('./imgs/olavinho.png'), pointer; */
+    cursor: url('./imgs/olavinho.png'), pointer;
 }
 
 label img {
@@ -214,7 +239,6 @@ label img {
     left: calc(50% - 20px);
 }
 
-
 .bridge#b2 {
     width: 620px;
     height: 40px;
@@ -246,7 +270,7 @@ label img {
 .bridge#b6 {
     width: 40px;
     height: 120px;
-    top: 0;
+    top: 15px;
     left: calc(50% - 20px);
 }
 
@@ -279,8 +303,8 @@ label img {
 }
 
 #portal-label {
-    left: calc(50% - 16px);
-    top: 10px;
+    left: calc(50% - 35px);
+    top: 0;
     animation: portal-animation 10s linear infinite;
     opacity: 0;
     transition: all .4s ease-in;
@@ -303,7 +327,6 @@ label img {
 }
 
 .mask:hover ~ .game-over {
-    background-color: red;
     z-index: 3;
 }
 
