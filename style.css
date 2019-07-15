@@ -111,6 +111,7 @@ input[type=checkbox] {
 label {
     position: absolute;
     z-index: 2;
+    padding: 20px;
     /* cursor: url('./imgs/olavinho.png'), pointer; */
 }
 
@@ -126,26 +127,26 @@ label img {
 }
 
 #l1 {
-    top: 125px;
-    left: 195px;
+    top: 105px;
+    left: 175px;
     transition: all .6s ease-in;
 }
 
 #l2 {
-    top: 125px;
-    left: 773px;
+    top: 105px;
+    left: 753px;
     transition: all .4s ease-in;
 }
 
 #l3 {
-    top: 645px;
-    left: 195px;
+    top: 625px;
+    left: 175px;
     transition: all 1s ease-in;
 }
 
 #l4 {
-    top: 645px;
-    left: 773px;
+    top: 625px;
+    left: 753px;
     transition: all .8s ease-in;
 }
 
