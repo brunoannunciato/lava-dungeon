@@ -54,7 +54,7 @@ body {
 }
 
 .goticulo:hover ~ .game-over {
-    z-index: 3;
+    /* z-index: 3; */
 }
 
 ::root {
@@ -111,7 +111,7 @@ input[type=checkbox] {
 label {
     position: absolute;
     z-index: 2;
-    cursor: url('./imgs/olavinho.png'), pointer;
+    /* cursor: url('./imgs/olavinho.png'), pointer; */
 }
 
 label img {
@@ -289,6 +289,120 @@ label img {
 @keyframes portal-animation {
     0% { transform: rotate(0) }
     100% { transform: rotate(360deg) }
+}
+
+/* **************
+    MAP MASKS
+**************  */
+
+.mask {
+    background-color: transparent;
+    opacity: .7;
+    position: absolute;
+}
+
+.mask:hover ~ .game-over {
+    background-color: red;
+    z-index: 3;
+}
+
+#m1 {
+    width: 511px;
+    right: 0;
+    height: 150px;
+    bottom: 0;
+}
+
+#m2 {
+    width: 475px;
+    left: 0;
+    height: 150px;
+    bottom: 0;
+}
+
+#m3 {
+    width: 130px;
+    left: 197px;
+    height: 154px;
+    bottom: 159px;
+}
+
+#m4 {
+    width: 377px;
+    left: 305px;
+    height: 100px;
+    bottom: 163px;
+}
+
+#m5 {
+    width: 132px;
+    right: 229px;
+    height: 152px;
+    bottom: 159px;
+}
+
+#m6 {
+    width: 189px;
+    right: 0;
+    height: 100%;
+    bottom: 0;
+}
+
+#m7 {
+    width: 189px;
+    left: 0;
+    height: 100%;
+    bottom: 0;
+}
+
+#m8 {
+    width: 511px;
+    right: 0;
+    height: 120px;
+    top: 0;
+}
+
+#m9 {
+    width: 475px;
+    left: 0;
+    height: 120px;
+    top: 0;
+}
+
+#m10 {
+    width: 144px;
+    left: 197px;
+    height: 150px;
+    top: 130px;
+}
+
+#m11 {
+    width: 377px;
+    left: 305px;
+    height: 100px;
+    top: 130px;
+}
+
+#m12 {
+    width: 135px;
+    right: 226px;
+    height: 150px;
+    top: 130px;
+}
+
+#m13 {
+    width: 140px;
+    left: 189px;
+    height: 188px;
+    bottom: 322px;
+
+}
+
+#m14 {
+    width: 170px;
+    right: 190px;
+    height: 188px;
+    bottom: 322px;
 }
 
 /* **************
