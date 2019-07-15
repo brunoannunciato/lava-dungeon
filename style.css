@@ -10,8 +10,7 @@ body {
     background-color: #000;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     cursor: url('./imgs/olavinho.png'), pointer;
 }
 
@@ -29,9 +28,10 @@ body::before {
 
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     z-index: 1;
+    padding: 15px;
 }
 
 .header img{
@@ -44,6 +44,25 @@ body::before {
 
 .game-over:hover {
     z-index: 3;
+}
+
+#instructions:checked ~ .rules {
+    z-index: 2;
+}
+
+#instructions:checked ~ #instructions-close {
+    z-index: 5;
+}
+
+.rules {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url(./imgs/wood.jpg);
+    background-repeat: repeat;
 }
 
 .game-over {
@@ -121,6 +140,35 @@ body::before {
     font-weight: bold;
     content: counter(score) " / 4";
     display: block;
+}
+
+.rules {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 10%;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.rules .logo {
+    display: block;
+    margin: 0 auto 80px;
+}
+
+.rules img {
+    display: block;
+    margin: 0 auto;
+}
+
+#instructions-close {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.5em;
+    background: #8b6e56;
+    padding: 5px 15px;
+    z-index: -1;
+    box-shadow: 0px 5px 5px -2px rgba(0,0,0,0.75);
+    bottom: 8px;
+    left: calc(50% - 58px );
 }
 
 /* **************
@@ -225,11 +273,21 @@ label img {
     height: 340px;
     left: calc(50% - 170px);
     width: 340px;
+    box-shadow: 0px 5px 4px -2px rgba(0,0,0,0.75);
+    z-index: 2;
 }
 
 .bridge {
     position: absolute;
     background: url('./imgs/stone.png');
+    box-shadow: 0px 5px 4px -2px rgba(0,0,0,0.75);
+}
+
+#plataform {
+    width: 120px;
+    height: 40px;
+    bottom: 0;
+    left: calc(50% - 60px);
 }
 
 .bridge#b1 {
@@ -244,6 +302,7 @@ label img {
     height: 40px;
     bottom: 120px;
     left: calc(50% - 310px);
+    z-index: 1;
 }
 
 .bridge#b3 {
@@ -286,6 +345,7 @@ label img {
     height: 40px;
     top: 280px;
     left: calc(50% - 310px);
+    z-index: 1;
 }
 
 .bridge#b9 {
@@ -300,6 +360,13 @@ label img {
     height: 120px;
     right: calc(50% - 310px);
     width: 40px;
+}
+
+#instructions-label {
+    bottom: -20px;
+    left: calc(50% + 5px);
+    z-index: 1;
+    position: absolute;
 }
 
 #portal-label {
@@ -333,15 +400,15 @@ label img {
 #m1 {
     width: 511px;
     right: 0;
-    height: 150px;
-    bottom: 0;
+    height: 110px;
+    bottom: 40px;
 }
 
 #m2 {
     width: 475px;
     left: 0;
-    height: 150px;
-    bottom: 0;
+    height: 110px;
+    bottom: 40px;
 }
 
 #m3 {
